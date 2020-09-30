@@ -22,7 +22,16 @@ RUN 	Rscript -e 'install.packages("ncdf4")' \
 	&& Rscript -e 'devtools::install_github("aemon-j/gotmtools")' \
 	&& Rscript -e 'devtools::install_github("aemon-j/SimstratR")' \
 	&& Rscript -e 'devtools::install_github("aemon-j/MyLakeR")' \
-	&& Rscript -e 'devtools::install_github("aemon-j/MyLakeR")' \
+	&& Rscript -e 'install.packages("configr)' \
+	&& Rscript -e 'install.packages("import)' \
+	&& Rscript -e 'install.packages("FME)' \
+	&& Rscript -e 'install.packages("lubridate)' \
+	&& Rscript -e 'install.packages("plyr)' \
+	&& Rscript -e 'install.packages("reshape2)' \
+	&& Rscript -e 'install.packages("zoo)' \
+	&& Rscript -e 'install.packages("ggplot2)' \
+	&& Rscript -e 'install.packages("dplyr)' \
+	&& Rscript -e 'install.packages("RColorBrewer)' \
 	&& Rscript -e 'devtools::install_github("aemon-j/LakeEnsemblR")'
 
 RUN 	echo "rstudio  ALL=(ALL) NOPASSWD:ALL">>/etc/sudoers
