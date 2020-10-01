@@ -1,6 +1,6 @@
 FROM rocker/verse:3.6.3-ubuntu18.04
 
-MAINTAINER "ARYAN ADHLAKHA" aryan@cs.wisc.edu "Robert Ladwig" 
+MAINTAINER  "Robert Ladwig" rladwig2@wisc.edu "ARYAN ADHLAKHA" aryan@cs.wisc.edu
 
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 	gfortran-8 \
@@ -19,7 +19,7 @@ RUN 	Rscript -e 'install.packages("ncdf4")' \
 	&& Rscript -e 'devtools::install_github("GLEON/rLakeAnalyzer")' \
 	&& Rscript -e 'devtools::install_github("aemon-j/FLakeR", ref = "inflow")' \
 	&& Rscript -e 'devtools::install_github("aemon-j/GOTMr")' \
-	&& Rscript -e 'devtools::install_github("aemon-j/gotmtools")' \
+	&& Rscript -e 'devtools::install_github("robertladwig/gotmtools")' \
 	&& Rscript -e 'devtools::install_github("aemon-j/SimstratR")' \
 	&& Rscript -e 'devtools::install_github("aemon-j/MyLakeR")' \
 	&& Rscript -e 'install.packages("configr")' \
