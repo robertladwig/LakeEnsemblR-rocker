@@ -42,6 +42,7 @@ RUN 	Rscript -e 'install.packages("ncdf4")' \
 	&& Rscript -e 'install.packages("colorRamps")' \
 	&& Rscript -e 'install.packages("gridExtra")' \
 	&& Rscript -e 'install.packages("readr")' \
+	&& Rscript -e 'install.packages("ggpubr")' \
 	&& Rscript -e 'devtools::install_github("aemon-j/LakeEnsemblR")'
 
 RUN 	echo "rstudio  ALL=(ALL) NOPASSWD:ALL">>/etc/sudoers
