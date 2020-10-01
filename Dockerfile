@@ -32,6 +32,16 @@ RUN 	Rscript -e 'install.packages("ncdf4")' \
 	&& Rscript -e 'install.packages("ggplot2")' \
 	&& Rscript -e 'install.packages("dplyr")' \
 	&& Rscript -e 'install.packages("RColorBrewer")' \
+	&& Rscript -e 'install.packages("tools")' \
+	&& Rscript -e 'install.packages("akima")' \
+	&& Rscript -e 'install.packages("lazyeval")' \
+	&& Rscript -e 'install.packages("hydroGOF")' \
+	&& Rscript -e 'install.packages("RSQLite")' \
+	&& Rscript -e 'install.packages("XML")' \
+	&& Rscript -e 'install.packages("MBA")' \
+	&& Rscript -e 'install.packages("colorRamps")' \
+	&& Rscript -e 'install.packages("gridExtra")' \
+	&& Rscript -e 'install.packages("readr")' \
 	&& Rscript -e 'devtools::install_github("aemon-j/LakeEnsemblR")'
 
 RUN 	echo "rstudio  ALL=(ALL) NOPASSWD:ALL">>/etc/sudoers
