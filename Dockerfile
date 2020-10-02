@@ -4,13 +4,13 @@ MAINTAINER  "Robert Ladwig" rladwig2@wisc.edu "ARYAN ADHLAKHA" aryan@cs.wisc.edu
 
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 	gfortran-8 \
-	gfortran \ 
+	gfortran \
 	libgd-dev \
 	git \
 	build-essential \
 	libnetcdf-dev \
 	ca-certificates \
-	&& update-ca-certificates 
+	&& update-ca-certificates
 
 RUN 	Rscript -e 'install.packages("ncdf4")' \
 	&& Rscript -e 'install.packages("devtools")' \
@@ -46,6 +46,9 @@ RUN 	Rscript -e 'install.packages("ncdf4")' \
 	&& Rscript -e 'devtools::install_github("aemon-j/LakeEnsemblR")'
 
 RUN 	echo "rstudio  ALL=(ALL) NOPASSWD:ALL">>/etc/sudoers
+
+RUN	git clone https://github.com/robertladwig/LakeEnsemblR-rocker.git
+RUN chmod -R 777 .
 
 COPY rserver.conf /etc/rstudio/rserver.conf
 RUN apt-get update && apt-get install -y python3-pip
