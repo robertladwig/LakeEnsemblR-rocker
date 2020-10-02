@@ -1,5 +1,8 @@
 ##------------- GLEON G21.5 meeting Workshop: LakeEnsemblR   -----------------##
 
+## set working directory to location the R script is stored
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
+
 ## copy example files from the package to current working directory
 template_folder <- system.file("extdata/feeagh", package= "LakeEnsemblR")
 file.copy(from = template_folder, to = ".", recursive = TRUE)
