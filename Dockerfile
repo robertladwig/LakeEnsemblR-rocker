@@ -47,6 +47,8 @@ RUN 	Rscript -e 'install.packages("ncdf4")' \
 
 RUN 	echo "rstudio  ALL=(ALL) NOPASSWD:ALL">>/etc/sudoers
 
+RUN	mkdir /home/rstudio/workshop
+WORKDIR /home/rstudio/workshop
 RUN	git clone https://github.com/robertladwig/LakeEnsemblR-rocker.git
 RUN chmod -R 777 .
 
